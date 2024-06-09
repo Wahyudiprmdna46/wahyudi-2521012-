@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Data Penginapan</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      // Memuat iframe saat halaman dimuat pertama kali
+      window.onload = function () {
+        document.getElementById("iframe_home").src = "home.html";
+        document.getElementById("iframe_qgis").src = "Qgis2Web.html";
+      };
+
+      function showHome() {
+        document.getElementById("iframe_home").style.display = "block";
+        document.getElementById("iframe_qgis").style.display = "none";
+      }
+
+      function showQGIS() {
+        document.getElementById("iframe_home").style.display = "none";
+        document.getElementById("iframe_qgis").style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">TraveLite</div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#" onclick="showHome()">Home</a></li>
+          <li><a href="#" onclick="showQGIS()">WEB QGIS</a></li>
+          <li><a href="#">Setting</a></li>
+        </ul>
+      </nav>
+      <div class="profile">
+        <img src="hotel2.jpg" alt="User Avatar" class="avatar" />
+      </div>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <iframe
+          id="iframe_home"
+          frameborder="0"
+          scrolling="auto"
+          width="100%"
+          height="100%"
+        ></iframe>
+        <iframe
+          id="iframe_qgis"
+          frameborder="0"
+          scrolling="auto"
+          width="100%"
+          height="100%"
+          style="display: none"
+        ></iframe>
+      </main>
+    </div>
+
+    <footer class="footer">
+      &copy; 2024 Wahyudi Primadana. All rights reserved.
+    </footer>
+  </body>
+</html>
